@@ -7,8 +7,6 @@ use Symfony\Component\Debug\Debug;
 // Define application environment
 defined('APP_ENV') || define('APP_ENV', (getenv('APP_ENV') ? getenv('APP_ENV') : 'prod'));
 
-error_log(getenv('APP_ENV'));
-
 $loader = require_once __DIR__ . '/../app/bootstrap.php.cache';
 
 if (APP_ENV == 'dev') {
