@@ -24,11 +24,6 @@
 # System files
 .DS_Store
 
-
-# webspaces
-/app/Resources/webspaces
-!/app/Resources/webspaces/*.dist
-
 # pages
 /app/Resources/pages/*
 !/app/Resources/pages/*.dist
