@@ -1,0 +1,6 @@
+{
+  "name": "Sulu 2.0",
+  "description": "Sulu is an open-source content management platform based on the Symfony PHP framework",
+  "repository": "https://github.com/sulu-cmf/sulu-cloud",
+  "keywords": ["cmf", "php", "symfony"]
+}
