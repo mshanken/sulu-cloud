@@ -1,7 +1,3 @@
-imports:
-    - { resource: parameters.yml }
-    - { resource: phpcr.yml }
-
 framework:
     #esi:             ~
     translator:      { fallback: %locale% }
