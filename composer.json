@@ -39,6 +39,9 @@
         "raulfraile/ladybug-bundle": "1.0.*"
     },
     "scripts": {
+        "pre-install-cmd": [
+            "Heroku\\Component\\Database\\HerokuDatabase::populateEnvironment"
+        ],
         "post-install-cmd": [
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
@@ -58,6 +61,21 @@
         "bin-dir": "bin"
     },
     "extra": {
+        "incenteev-parameters": [
+            {
+                "file": "app/config/parameters.yml",
+                "env-map": {
+                    "database_host": "DATABASE_HOST",
+                    "database_port": "DATABASE_PORT",
+                    "database_name": "DATABASE_NAME",
+                    "database_user": "DATABASE_USER",
+                    "database_password": "DATABASE_PASSWORD"
+                }
+            },
+            {
+                "file": "app/config/phpcr.yml"
+            }
+        ],
         "symfony-app-dir": "app",
         "symfony-web-dir": "web"
     }
