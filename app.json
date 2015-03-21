@@ -8,6 +8,6 @@
         "postdeploy": "app/console sulu:build dev -n"
     },
     "env": {
-        
+        "SYMFONY_ENV": "prod"
     }
 }
