@@ -55,7 +55,7 @@
             <environments>
                 <environment type="prod">
                     <urls>
-                        <url>sulu-cloud.herokuapp.com/{localization}</url>
+                        <url>sulucloud.herokuapp.com/{localization}</url>
                     </urls>
                 </environment>
                 <environment type="stage">

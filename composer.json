@@ -45,7 +45,8 @@
     },
     "scripts": {
         "pre-install-cmd": [
-            "Heroku\\Component\\Database\\HerokuDatabase::populateEnvironment"
+            "Heroku\\Component\\Composer\\ScriptHandler::populateEnvironment",
+            "Heroku\\Component\\Composer\\ScriptHandler::createWebspace"
         ],
         "post-install-cmd": [
             "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
