@@ -19,6 +19,8 @@
         "sensio/distribution-bundle": "~3.0",
         "sensio/framework-extra-bundle": "~3.0",
         "incenteev/composer-parameter-handler": "~2.0",
+        "doctrine/dbal": "2.4.*",
+
         "sulu/sulu": "dev-develop",
         "symfony-cmf/core-bundle": "1.1.*",
 
@@ -42,6 +44,10 @@
         "phpcr/phpcr-shell": "@beta"
     },
     "scripts": {
+        "pre-install-cmd": [
+            "Heroku\\Component\\Composer\\ScriptHandler::populateEnvironment",
+            "Heroku\\Component\\Composer\\ScriptHandler::createWebspace"
+        ],
         "post-install-cmd": [
             "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
@@ -63,12 +69,23 @@
         "bin-dir": "bin"
     },
     "extra": {
+        "incenteev-parameters": [
+            {
+                "file": "app/config/parameters.yml",
+                "env-map": {
+                    "database_host": "DATABASE_HOST",
+                    "database_port": "DATABASE_PORT",
+                    "database_name": "DATABASE_NAME",
+                    "database_user": "DATABASE_USER",
+                    "database_password": "DATABASE_PASSWORD"
+                }
+            },
+            {
+                "file": "app/config/phpcr.yml"
+            }
+        ],
         "symfony-app-dir": "app",
         "symfony-web-dir": "web",
-        "symfony-assets-install": "relative",
-        "incenteev-parameters": [
-            {"file": "app/config/parameters.yml"},
-            {"file": "app/config/phpcr.yml"}
-        ]
+        "symfony-assets-install": "relative"
     }
 }
