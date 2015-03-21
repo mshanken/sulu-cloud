@@ -25,10 +25,6 @@
 # System files
 .DS_Store
 
-# pages
-/app/Resources/pages/*
-!/app/Resources/pages/*.dist
-
 # snippets
 /app/Resources/snippets/*
 !/app/Resources/snippets/*.dist
